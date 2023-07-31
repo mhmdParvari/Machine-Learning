@@ -68,7 +68,7 @@ class CooSystem:
 
     def show(self):
         # cv.imshow('h', self.field)
-        cv.imwrite('h.jpg', cv.cvtColor(self.field, cv2.COLOR_BGR2HSV))
+        cv.imwrite('h.jpg', cv.cvtColor(self.field, cv.COLOR_BGR2RGB))
 
     def get_img(self):
         return self.field
