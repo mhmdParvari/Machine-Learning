@@ -10,4 +10,3 @@ y = np.interp(y, (y.min(),y.max()), (5,25))
 
 p = PerceptronAnimation(0.0001, .001, 5)
 p.fit(x,y)
-plt.show()
