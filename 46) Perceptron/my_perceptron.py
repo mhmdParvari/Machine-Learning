@@ -46,7 +46,14 @@ class PerceptronAnimation:
                 plt.pause(.05)
 
     def predict(self, x_test):
-        return x_test * self.w + self.b
+        y_pred = np.zeros(x_test.shape[0])
+        if len(self.w) == 1:
+            y_pred = x_test * self.w
+        else:
+            for i in range(len(self.w)):
+                y_pred += x_test[:,i] * self.w[i]
+        y_pred += self.b
+        return np.array([self.activation_func(y) for y in y_pred])
 
     def evaluate(self, x_test, y_test):
         y_pred = self.predict(x_test)
